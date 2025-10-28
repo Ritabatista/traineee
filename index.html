@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa Trainee The Best 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .email-wrapper {
+            width: 100%;
+            background-color: #f5f5f5;
+            padding: 20px 0;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .accent-bar {
+            height: 4px;
+            background: linear-gradient(90deg, #ffad00 0%, #ffc446 100%);
+        }
+        
+        .header-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, #ffad00 0%, #ffc446 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .content {
+            padding: 48px 40px;
+        }
+        
+        .greeting {
+            font-size: 32px;
+            font-weight: 300;
+            color: #000000;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+        
+        .text-block {
+            font-size: 18px;
+            color: #4a4a4a;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .text-block strong {
+            color: #000000;
+            font-weight: 600;
+        }
+        
+        .highlight {
+            color: #ffad00;
+            font-weight: 600;
+        }
+        
+        .emoji {
+            font-size: 24px;
+        }
+        
+        .divider {
+            height: 1px;
+            background-color: #e8e8e8;
+            margin: 40px 0;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 28px;
+            letter-spacing: -0.5px;
+        }
+        
+        .benefits {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .benefits li {
+            padding: 18px 0 18px 32px;
+            font-size: 17px;
+            color: #4a4a4a;
+            line-height: 1.6;
+            position: relative;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        
+        .benefits li:last-child {
+            border-bottom: none;
+        }
+        
+        .benefits li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 18px;
+            color: #ffad00;
+            font-size: 22px;
+            font-weight: 700;
+        }
+        
+        .cta-section {
+            margin: 48px 0;
+            text-align: center;
+        }
+        
+        .cta-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #999999;
+            margin-bottom: 24px;
+        }
+        
+        .date-card {
+            background-color: #000000;
+            border-radius: 16px;
+            padding: 40px 32px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .date-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ffad00 0%, #ffc446 100%);
+        }
+        
+        .date-icon {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ffad00;
+            margin-bottom: 16px;
+        }
+        
+        .date-text {
+            font-size: 36px;
+            font-weight: 300;
+            color: #ffffff;
+            letter-spacing: 1px;
+            margin: 12px 0;
+        }
+        
+        .date-separator {
+            color: #ffad00;
+            margin: 0 12px;
+            font-weight: 300;
+        }
+        
+        .closing {
+            font-size: 19px;
+            color: #000000;
+            text-align: center;
+            margin: 48px 0;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        
+        .closing strong {
+            font-weight: 600;
+        }
+        
+        .signature {
+            padding-top: 32px;
+            border-top: 1px solid #e8e8e8;
+            font-size: 16px;
+            color: #999999;
+            line-height: 1.6;
+        }
+        
+        .signature-name {
+            color: #000000;
+            font-weight: 600;
+            display: block;
+            margin-top: 4px;
+        }
+        
+        .social-section {
+            background-color: #fafafa;
+            padding: 48px 40px;
+            text-align: center;
+        }
+        
+        .social-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 24px;
+            letter-spacing: -0.3px;
+        }
+        
+        .social-button {
+            display: inline-block;
+            background-color: #ffad00;
+            color: #000000;
+            text-decoration: none;
+            padding: 16px 48px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 16px 0;
+            letter-spacing: 0.3px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(255, 173, 0, 0.2);
+        }
+        
+        .social-button:hover {
+            background-color: #ffc446;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(255, 173, 0, 0.3);
+        }
+        
+        .social-button:active {
+            transform: translateY(0);
+        }
+        
+        .social-subtitle {
+            font-size: 14px;
+            color: #999999;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+        
+        /* Responsividade para Tablets */
+        @media only screen and (max-width: 768px) {
+            .email-wrapper {
+                padding: 16px;
+            }
+            
+            .email-container {
+                border-radius: 4px;
+            }
+            
+            .content {
+                padding: 40px 32px;
+            }
+            
+            .greeting {
+                font-size: 28px;
+            }
+            
+            .text-block {
+                font-size: 17px;
+            }
+            
+            .section-title {
+                font-size: 22px;
+            }
+            
+            .date-text {
+                font-size: 32px;
+            }
+            
+            .social-section {
+                padding: 40px 32px;
+            }
+        }
+        
+        /* Responsividade para Mobile */
+        @media only screen and (max-width: 480px) {
+            .email-wrapper {
+                padding: 8px;
+            }
+            
+            .email-container {
+                border-radius: 0;
+                box-shadow: none;
+            }
+            
+            .header-image {
+                height: 200px;
+                font-size: 16px;
+            }
+            
+            .content {
+                padding: 32px 24px;
+            }
+            
+            .greeting {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            
+            .text-block {
+                font-size: 16px;
+                margin-bottom: 18px;
+            }
+            
+            .emoji {
+                font-size: 20px;
+            }
+            
+            .divider {
+                margin: 32px 0;
+            }
+            
+            .section-title {
+                font-size: 20px;
+                margin-bottom: 24px;
+            }
+            
+            .benefits li {
+                padding: 16px 0 16px 28px;
+                font-size: 16px;
+            }
+            
+            .benefits li:before {
+                top: 16px;
+                font-size: 20px;
+            }
+            
+            .cta-section {
+                margin: 40px 0;
+            }
+            
+            .cta-label {
+                font-size: 11px;
+                margin-bottom: 20px;
+            }
+            
+            .date-card {
+                padding: 32px 24px;
+                border-radius: 12px;
+            }
+            
+            .date-icon {
+                font-size: 11px;
+            }
+            
+            .date-text {
+                font-size: 26px;
+            }
+            
+            .date-separator {
+                margin: 0 8px;
+            }
+            
+            .closing {
+                font-size: 17px;
+                margin: 40px 0;
+            }
+            
+            .signature {
+                font-size: 15px;
+                padding-top: 28px;
+            }
+            
+            .social-section {
+                padding: 40px 24px;
+            }
+            
+            .social-title {
+                font-size: 18px;
+            }
+            
+            .social-button {
+                padding: 14px 40px;
+                font-size: 15px;
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .social-subtitle {
+                font-size: 13px;
+            }
+        }
+        
+        /* Ajustes extras para telas muito pequenas */
+        @media only screen and (max-width: 360px) {
+            .content {
+                padding: 24px 16px;
+            }
+            
+            .greeting {
+                font-size: 22px;
+            }
+            
+            .text-block {
+                font-size: 15px;
+            }
+            
+            .date-text {
+                font-size: 22px;
+            }
+            
+            .social-section {
+                padding: 32px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-wrapper">
+        <div class="email-container">
+            <div class="accent-bar"></div>
+            
+            <div class="header-image">
+                SAVE THE DATE
+            </div>
+            
+            <div class="content">
+                <div class="greeting">Olá!</div>
+                
+                <div class="text-block">
+                    Tem novidade chegando... <span class="emoji">👀</span>
+                </div>
+                
+                <div class="text-block">
+                    O <strong>Programa Trainee The Best 2026</strong> abre suas inscrições no dia <span class="highlight">01 de novembro</span>, e essa pode ser a sua chance de construir uma carreira em um dos grupos que mais cresce no Brasil.
+                </div>
+                
+                <div class="text-block">
+                    Ser um Trainee The Best é viver uma experiência intensa de <strong>desenvolvimento, aprendizado e protagonismo</strong>, com desafios reais e oportunidades de crescimento acelerado.
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="section-title">Por que ser um Trainee The Best?</div>
+                
+                <ul class="benefits">
+                    <li>Desenvolvimento com líderes e mentores que inspiram</li>
+                    <li>Participação em projetos estratégicos que impactam o negócio</li>
+                    <li>Possibilidade de construir uma carreira sólida em um ambiente que valoriza resultados, cultura forte e aprendizado constante</li>
+                </ul>
+                
+                <div class="divider"></div>
+                
+                <div class="cta-section">
+                    <div class="cta-label">Fique de olho</div>
+                    
+                    <div class="date-card">
+                        <div class="date-icon"> Inscrições abertas</div>
+                        <div class="date-text">
+                            01/11 <span class="date-separator">→</span> 01/01/2026
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="closing">
+                    Não perca a chance de viver essa jornada.<br>
+                    <strong>O próximo Trainee The Best pode ser você!</strong>
+                </div>
+                
+                <div class="signature">
+                    Abraços,<br>
+                    <span class="signature-name">Equipe de Gente & Gestão – Grupo The Best</span>
+                </div>
+            </div>
+            
+            <div class="social-section">
+                <div class="social-title">Acompanhe nossas redes sociais</div>
+                <a href="https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Aorganization%3A107876935&keywords=The%20Best%20A%C3%A7a%C3%AD&origin=ENTITY_SEARCH_HOME_HISTORY&sid=Yn7" class="social-button">
+                    Seguir no LinkedIn
+                </a>
+                <div class="social-subtitle">Fique por dentro de todas as novidades e oportunidades</div>
+            </div>
+            
+            <div class="accent-bar"></div>
+        </div>
+    </div>
+</body>
+</html>
